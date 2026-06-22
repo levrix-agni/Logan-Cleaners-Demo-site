@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cleaners At Logan | Premium Cleaning Services Brisbane</title>
+    <meta name="description" content="Professional cleaning services across Brisbane and Logan. Delivering spotless results for homes and businesses with reliability and attention to detail.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Inter:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS (Loaded via CDN for zero-install static use) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'ui-sans-serif', 'system-ui'],
+                        display: ['Playfair Display', 'serif'],
+                        heading: ['Outfit', 'sans-serif'],
+                        cinematic: ['Cormorant Garamond', 'serif'],
+                        editorial: ['Playfair Display', 'serif'],
+                    },
+                    colors: {
+                        primary: '#3B82F6',
+                        dark: '#0A0A0A',
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style type="text/css">
+        .font-editorial { font-family: "Playfair Display", serif; }
+        
+        .glass-cta {
+            position: relative;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .glass-cta:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+
+        .shine-effect::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -150%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(
+                to right,
+                transparent,
+                rgba(255, 255, 255, 0.15),
+                transparent
+            );
+            transform: skewX(-25deg);
+            animation: shine 8s infinite linear;
+        }
+
+        @keyframes shine {
+            0% { left: -150%; }
+            20%, 100% { left: 250%; }
+        }
+
+        .container-custom {
+            max-width: 80rem;
+            margin-left: auto;
+            margin-right: auto;
+            padding-left: 1.5rem;
+            padding-right: 1.5rem;
+        }
+
+        @media (min-width: 1024px) {
+            .container-custom {
+                padding-left: 3rem;
+                padding-right: 3rem;
+            }
+        }
+
+        .section-padding {
+            padding-top: 6rem;
+            padding-bottom: 6rem;
+        }
+
+        @media (min-width: 1024px) {
+            .section-padding {
+                padding-top: 8rem;
+                padding-bottom: 8rem;
+            }
+        }
+
+        /* Animation utilities */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 1s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .delay-100 { transition-delay: 100ms; }
+        .delay-200 { transition-delay: 200ms; }
+        .delay-300 { transition-delay: 300ms; }
+        
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+<body class="antialiased text-[#111111] bg-[#F8F8F8] font-sans">
+
+    <!-- Navigation -->
+    <nav id="navbar" class="fixed top-0 w-full z-50 transition-all duration-500 py-8">
+        <div class="container-custom flex justify-between items-center">
+            <div class="flex flex-col">
+                <span class="text-white text-xl font-heading font-black tracking-tighter uppercase leading-none">
+                    Cleaners At Logan
+                </span>
+                <span class="text-primary text-[9px] tracking-[0.3em] font-bold uppercase mt-1">
+                    Premium Service Brisbane
+                </span>
+            </div>
+
+            <!-- Desktop Nav -->
+            <div class="hidden md:flex items-center space-x-12">
+                <div class="flex items-center space-x-10">
+                    <a href="#services" class="text-white/70 hover:text-white text-[11px] font-bold tracking-[0.2em] uppercase transition-colors">Services</a>
+                    <a href="#why-us" class="text-white/70 hover:text-white text-[11px] font-bold tracking-[0.2em] uppercase transition-colors">Why Us</a>
+                    <a href="#process" class="text-white/70 hover:text-white text-[11px] font-bold tracking-[0.2em] uppercase transition-colors">Process</a>
+                    <a href="#testimonials" class="text-white/70 hover:text-white text-[11px] font-bold tracking-[0.2em] uppercase transition-colors">Testimonials</a>
+                </div>
+                <div class="flex items-center space-x-8">
+                    <a href="tel:0487145901" class="flex items-center text-white/90 font-bold hover:text-primary transition-colors group">
+                        <i data-lucide="phone" class="w-3.5 h-3.5 mr-2.5 text-primary group-hover:scale-110 transition-transform"></i>
+                        <span class="text-[11px] tracking-[0.2em] uppercase">0487 145 901</span>
+                    </a>
+                    <button class="bg-white hover:bg-primary hover:text-white text-[#111111] px-7 py-3.5 rounded-none text-[10px] font-black tracking-[0.2em] uppercase transition-all">
+                        Get Free Quote
+                    </button>
+                </div>
+            </div>
+
+            <!-- Mobile Toggle -->
+            <button id="mobile-menu-toggle" class="md:hidden text-white">
+                <i data-lucide="menu" id="menu-icon"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden absolute top-full left-0 w-full bg-[#0A0A0A] border-t border-white/5 p-8 flex flex-col space-y-6 md:hidden transition-all">
+            <a href="#services" class="text-white text-lg font-bold tracking-widest uppercase">Services</a>
+            <a href="#why-us" class="text-white text-lg font-bold tracking-widest uppercase">Why Us</a>
+            <a href="#process" class="text-white text-lg font-bold tracking-widest uppercase">Process</a>
+            <a href="#testimonials" class="text-white text-lg font-bold tracking-widest uppercase">Testimonials</a>
+            <div class="pt-6 border-t border-white/10 flex flex-col space-y-6">
+                <a href="tel:0487145901" class="flex items-center text-white text-lg font-bold uppercase tracking-widest">
+                    <i data-lucide="phone" class="w-5 h-5 mr-3 text-primary"></i>
+                    0487 145 901
+                </a>
+                <button class="bg-primary text-white py-5 rounded-none text-xs font-black tracking-widest uppercase">
+                    Get Free Quote
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative min-h-[100svh] w-full flex items-center overflow-hidden bg-[#0A0A0A]">
+        <div class="absolute inset-0">
+            <img src="public/hero-cleaning.jpg" alt="Premium Interior" class="w-full h-full object-cover opacity-40 scale-100">
+            <div class="absolute inset-0 bg-gradient-to-b from-black/60 via-transparent to-[#0A0A0A]"></div>
+            <div class="absolute inset-0 bg-black/20"></div>
+        </div>
+
+        <div class="relative z-10 container-custom w-full pt-12 pb-24 md:pb-0">
+            <div class="max-w-5xl">
+                <div class="reveal active">
+                    <h1 class="text-white text-5xl sm:text-7xl md:text-8xl lg:text-[10rem] font-black tracking-tighter leading-[0.85] sm:leading-[0.8] mb-8 sm:mb-12">
+                        The Art of <br>
+                        <span class="font-editorial italic font-normal text-white/40 tracking-tight">Pure.</span>
+                    </h1>
+                    
+                    <p class="text-white/70 text-base sm:text-lg md:text-xl max-w-xl leading-relaxed mb-10 sm:mb-16 font-medium tracking-tight">
+                        Bespoke cleaning services for Brisbane's most prestigious properties. 
+                        Uncompromising standards, meticulously delivered.
+                    </p>
+                    
+                    <div class="flex flex-col sm:flex-row gap-4 sm:gap-8 max-w-md sm:max-w-none">
+                        <button class="glass-cta shine-effect text-white px-8 sm:px-14 py-5 sm:py-7 rounded-none text-[10px] sm:text-[11px] font-black tracking-[0.3em] sm:tracking-[0.4em] uppercase flex items-center justify-center group">
+                            <span class="relative z-10 flex items-center">
+                                Get Free Quote
+                                <i data-lucide="arrow-right" class="ml-3 sm:ml-4 w-3.5 sm:w-4 h-3.5 sm:h-4 group-hover:translate-x-2 transition-transform"></i>
+                            </span>
+                        </button>
+                        
+                        <a href="tel:0487145901" class="glass-cta shine-effect text-white px-8 sm:px-14 py-5 sm:py-7 rounded-none text-[10px] sm:text-[11px] font-black tracking-[0.3em] sm:tracking-[0.4em] uppercase flex items-center justify-center group">
+                            <span class="relative z-10 opacity-70 group-hover:opacity-100 transition-opacity">
+                                0487 145 901
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="absolute bottom-12 left-1/2 -translate-x-1/2 hidden md:block">
+            <div class="w-[1px] h-24 bg-gradient-to-b from-white to-transparent"></div>
+        </div>
+    </section>
+
+    <!-- Trust Section -->
+    <section class="bg-white section-padding border-b border-black/5">
+        <div class="container-custom">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-x-12 gap-y-16">
+                <div class="reveal flex flex-col space-y-6">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-1.5 h-1.5 bg-primary"></div>
+                        <h3 class="text-[#111111] text-xs font-black tracking-[0.2em] uppercase">Fully Insured</h3>
+                    </div>
+                    <p class="text-[#666666] text-sm leading-relaxed font-medium">Complete coverage for high-value properties and commercial assets.</p>
+                </div>
+                <div class="reveal delay-100 flex flex-col space-y-6">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-1.5 h-1.5 bg-primary"></div>
+                        <h3 class="text-[#111111] text-xs font-black tracking-[0.2em] uppercase">Reliable Team</h3>
+                    </div>
+                    <p class="text-[#666666] text-sm leading-relaxed font-medium">Punctual, vetted professionals dedicated to service excellence.</p>
+                </div>
+                <div class="reveal delay-200 flex flex-col space-y-6">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-1.5 h-1.5 bg-primary"></div>
+                        <h3 class="text-[#111111] text-xs font-black tracking-[0.2em] uppercase">Guaranteed Quality</h3>
+                    </div>
+                    <p class="text-[#666666] text-sm leading-relaxed font-medium">Rigorous quality control protocols ensuring perfection on every visit.</p>
+                </div>
+                <div class="reveal delay-300 flex flex-col space-y-6">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-1.5 h-1.5 bg-primary"></div>
+                        <h3 class="text-[#111111] text-xs font-black tracking-[0.2em] uppercase">Brisbane Based</h3>
+                    </div>
+                    <p class="text-[#666666] text-sm leading-relaxed font-medium">Deeply rooted in the local community, serving Brisbane and Logan.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="bg-[#0A0A0A] section-padding overflow-hidden">
+        <div class="container-custom">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 mb-24 items-end">
+                <div class="lg:col-span-8 reveal">
+                    <span class="text-primary font-heading font-black tracking-[0.4em] uppercase text-[10px] mb-6 block">Core Expertise</span>
+                    <h2 class="text-white text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter leading-[0.9]">
+                        Services <br>
+                        <span class="font-editorial italic font-normal text-white/40 tracking-normal">Redefined</span>
+                    </h2>
+                </div>
+                <div class="lg:col-span-4 pb-2 reveal delay-200">
+                    <p class="text-[#999999] text-base font-medium leading-relaxed max-w-sm">
+                        We offer a curated suite of premium cleaning solutions designed for those who demand the highest standards.
+                    </p>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <!-- Residential -->
+                <div class="reveal group relative h-[500px] overflow-hidden bg-[#111111] border border-white/5">
+                    <img src="public/hero-cleaning.jpg" alt="Residential" class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-30 group-hover:scale-105 transition-all duration-1000">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/20 to-transparent"></div>
+                    <div class="absolute inset-0 p-12 flex flex-col justify-end">
+                        <span class="text-primary text-[10px] font-black tracking-[0.3em] uppercase mb-4 opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-500">Premium Service</span>
+                        <h3 class="text-white text-3xl font-black mb-6 tracking-tighter group-hover:text-primary transition-colors duration-500">Residential Cleaning</h3>
+                        <p class="text-white/60 text-sm leading-relaxed font-medium mb-8 opacity-0 group-hover:opacity-100 transition-all duration-700 delay-100">Tailored cleaning solutions for high-end homes, from maintenance to specialized care.</p>
+                        <div class="w-full h-1 bg-white/5 relative overflow-hidden">
+                            <div class="absolute inset-0 bg-primary -translate-x-full group-hover:translate-x-0 transition-transform duration-700 ease-in-out"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Commercial -->
+                <div class="reveal delay-100 group relative h-[500px] overflow-hidden bg-[#111111] border border-white/5">
+                    <img src="public/commercial-cleaning.jpg" alt="Commercial" class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-30 group-hover:scale-105 transition-all duration-1000">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/20 to-transparent"></div>
+                    <div class="absolute inset-0 p-12 flex flex-col justify-end">
+                        <span class="text-primary text-[10px] font-black tracking-[0.3em] uppercase mb-4 opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-500">Premium Service</span>
+                        <h3 class="text-white text-3xl font-black mb-6 tracking-tighter group-hover:text-primary transition-colors duration-500">Commercial Cleaning</h3>
+                        <p class="text-white/60 text-sm leading-relaxed font-medium mb-8 opacity-0 group-hover:opacity-100 transition-all duration-700 delay-100">Maintain a pristine professional environment with our expert corporate services.</p>
+                        <div class="w-full h-1 bg-white/5 relative overflow-hidden">
+                            <div class="absolute inset-0 bg-primary -translate-x-full group-hover:translate-x-0 transition-transform duration-700 ease-in-out"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- End of Lease -->
+                <div class="reveal delay-200 group relative h-[500px] overflow-hidden bg-[#111111] border border-white/5">
+                    <img src="public/end-of-lease.jpg" alt="End of Lease" class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-30 group-hover:scale-105 transition-all duration-1000">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/20 to-transparent"></div>
+                    <div class="absolute inset-0 p-12 flex flex-col justify-end">
+                        <span class="text-primary text-[10px] font-black tracking-[0.3em] uppercase mb-4 opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-500">Premium Service</span>
+                        <h3 class="text-white text-3xl font-black mb-6 tracking-tighter group-hover:text-primary transition-colors duration-500">End of Lease</h3>
+                        <p class="text-white/60 text-sm leading-relaxed font-medium mb-8 opacity-0 group-hover:opacity-100 transition-all duration-700 delay-100">Detailed cleaning designed to exceed strict property management standards.</p>
+                        <div class="w-full h-1 bg-white/5 relative overflow-hidden">
+                            <div class="absolute inset-0 bg-primary -translate-x-full group-hover:translate-x-0 transition-transform duration-700 ease-in-out"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Deep Cleaning -->
+                <div class="reveal group relative h-[500px] overflow-hidden bg-[#111111] border border-white/5">
+                    <img src="public/deep-clean.jpg" alt="Deep Cleaning" class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-30 group-hover:scale-105 transition-all duration-1000">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/20 to-transparent"></div>
+                    <div class="absolute inset-0 p-12 flex flex-col justify-end">
+                        <span class="text-primary text-[10px] font-black tracking-[0.3em] uppercase mb-4 opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-500">Premium Service</span>
+                        <h3 class="text-white text-3xl font-black mb-6 tracking-tighter group-hover:text-primary transition-colors duration-500">Deep Cleaning</h3>
+                        <p class="text-white/60 text-sm leading-relaxed font-medium mb-8 opacity-0 group-hover:opacity-100 transition-all duration-700 delay-100">A thorough, restorative sanitize focusing on every intricate architectural detail.</p>
+                        <div class="w-full h-1 bg-white/5 relative overflow-hidden">
+                            <div class="absolute inset-0 bg-primary -translate-x-full group-hover:translate-x-0 transition-transform duration-700 ease-in-out"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Office Cleaning -->
+                <div class="reveal delay-100 group relative h-[500px] overflow-hidden bg-[#111111] border border-white/5">
+                    <img src="public/office-clean.jpg" alt="Office" class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-30 group-hover:scale-105 transition-all duration-1000">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/20 to-transparent"></div>
+                    <div class="absolute inset-0 p-12 flex flex-col justify-end">
+                        <span class="text-primary text-[10px] font-black tracking-[0.3em] uppercase mb-4 opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-500">Premium Service</span>
+                        <h3 class="text-white text-3xl font-black mb-6 tracking-tighter group-hover:text-primary transition-colors duration-500">Office Cleaning</h3>
+                        <p class="text-white/60 text-sm leading-relaxed font-medium mb-8 opacity-0 group-hover:opacity-100 transition-all duration-700 delay-100">Bespoke cleaning schedules to keep your workplace hygienic and prestigious.</p>
+                        <div class="w-full h-1 bg-white/5 relative overflow-hidden">
+                            <div class="absolute inset-0 bg-primary -translate-x-full group-hover:translate-x-0 transition-transform duration-700 ease-in-out"></div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Maintenance Care -->
+                <div class="reveal delay-200 group relative h-[500px] overflow-hidden bg-[#111111] border border-white/5">
+                    <img src="public/maintenance-clean.jpg" alt="Maintenance" class="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:opacity-30 group-hover:scale-105 transition-all duration-1000">
+                    <div class="absolute inset-0 bg-gradient-to-t from-[#0A0A0A] via-[#0A0A0A]/20 to-transparent"></div>
+                    <div class="absolute inset-0 p-12 flex flex-col justify-end">
+                        <span class="text-primary text-[10px] font-black tracking-[0.3em] uppercase mb-4 opacity-0 group-hover:opacity-100 translate-y-4 group-hover:translate-y-0 transition-all duration-500">Premium Service</span>
+                        <h3 class="text-white text-3xl font-black mb-6 tracking-tighter group-hover:text-primary transition-colors duration-500">Maintenance Care</h3>
+                        <p class="text-white/60 text-sm leading-relaxed font-medium mb-8 opacity-0 group-hover:opacity-100 transition-all duration-700 delay-100">Consistent, high-standard cleaning to keep your property in perpetual perfection.</p>
+                        <div class="w-full h-1 bg-white/5 relative overflow-hidden">
+                            <div class="absolute inset-0 bg-primary -translate-x-full group-hover:translate-x-0 transition-transform duration-700 ease-in-out"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section id="why-us" class="bg-white section-padding">
+        <div class="container-custom">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+                <div class="reveal">
+                    <span class="text-primary font-heading font-black tracking-[0.4em] uppercase text-[10px] mb-8 block">The Standard</span>
+                    <h2 class="text-[#111111] text-4xl sm:text-5xl md:text-7xl font-black tracking-tighter mb-8 sm:mb-10 leading-[0.9]">
+                        Why Choose <br>
+                        <span class="font-editorial italic font-normal text-[#CCCCCC] tracking-normal">Cleaners At Logan?</span>
+                    </h2>
+                    <p class="text-[#666666] text-lg mb-16 font-medium leading-relaxed max-w-xl opacity-80">
+                        We don't just maintain spaces; we elevate them. Our commitment to excellence has made us the trusted choice for Brisbane's most discerning property owners.
+                    </p>
+                    
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-12 gap-y-12">
+                        <div class="flex flex-col space-y-4">
+                            <h4 class="text-[#111111] font-black text-xs tracking-[0.2em] uppercase">Bespoke Service</h4>
+                            <p class="text-[#888888] text-sm leading-relaxed font-medium">Tailored strategies for every property's unique architectural requirements.</p>
+                        </div>
+                        <div class="flex flex-col space-y-4">
+                            <h4 class="text-[#111111] font-black text-xs tracking-[0.2em] uppercase">Consistent Excellence</h4>
+                            <p class="text-[#888888] text-sm leading-relaxed font-medium">Rigorous protocols that ensure the same high standard every single visit.</p>
+                        </div>
+                        <div class="flex flex-col space-y-4">
+                            <h4 class="text-[#111111] font-black text-xs tracking-[0.2em] uppercase">Elite Professionals</h4>
+                            <p class="text-[#888888] text-sm leading-relaxed font-medium">Highly trained specialists committed to the art of meticulous cleaning.</p>
+                        </div>
+                        <div class="flex flex-col space-y-4">
+                            <h4 class="text-[#111111] font-black text-xs tracking-[0.2em] uppercase">Transparent Values</h4>
+                            <p class="text-[#888888] text-sm leading-relaxed font-medium">Clear communication and absolute integrity in every client interaction.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative reveal delay-200">
+                    <div class="relative z-10 aspect-[5/6] overflow-hidden grayscale hover:grayscale-0 transition-all duration-1000 shadow-2xl">
+                        <img src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&q=80&w=1000" alt="Professional Cleaning" class="w-full h-full object-cover">
+                    </div>
+                    
+                    <div class="absolute bottom-4 right-4 sm:-bottom-16 sm:-right-12 bg-[#111111] p-8 sm:p-12 lg:p-16 z-20 max-w-[200px] sm:max-w-[280px] shadow-2xl">
+                        <div class="text-primary text-4xl sm:text-6xl font-black mb-2 sm:mb-4 tracking-tighter leading-none">100</div>
+                        <div class="text-white text-[8px] sm:text-[10px] tracking-[0.3em] sm:tracking-[0.4em] uppercase font-black leading-relaxed">
+                            Percent <br>Satisfaction <br><span class="text-white/40">Guaranteed</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="bg-[#0A0A0A] section-padding">
+        <div class="container-custom">
+            <div class="flex flex-col items-center text-center mb-32 reveal">
+                <span class="text-primary font-heading font-black tracking-[0.4em] uppercase text-[10px] mb-8 block">The Journey</span>
+                <h2 class="text-white text-4xl sm:text-5xl md:text-7xl font-black tracking-tighter max-w-4xl">
+                    Our <span class="font-editorial italic font-normal text-white/40 tracking-normal">Signature</span> Process
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-12 gap-y-24 relative">
+                <div class="hidden lg:block absolute top-[4.5rem] left-0 w-full h-px bg-white/5 -z-0"></div>
+                
+                <div class="reveal relative z-10 group">
+                    <div class="text-primary text-8xl font-black tracking-tighter mb-12 opacity-10 group-hover:opacity-100 transition-opacity duration-700 leading-none">01</div>
+                    <h3 class="text-white text-xs font-black mb-6 tracking-[0.3em] uppercase group-hover:text-primary transition-colors">Request</h3>
+                    <p class="text-white/40 text-sm leading-relaxed font-medium group-hover:text-white/70 transition-colors">Initial consultation to understand your unique property requirements.</p>
+                </div>
+                <div class="reveal delay-100 relative z-10 group">
+                    <div class="text-primary text-8xl font-black tracking-tighter mb-12 opacity-10 group-hover:opacity-100 transition-opacity duration-700 leading-none">02</div>
+                    <h3 class="text-white text-xs font-black mb-6 tracking-[0.3em] uppercase group-hover:text-primary transition-colors">Schedule</h3>
+                    <p class="text-white/40 text-sm leading-relaxed font-medium group-hover:text-white/70 transition-colors">Selecting a bespoke timeframe that integrates with your lifestyle.</p>
+                </div>
+                <div class="reveal delay-200 relative z-10 group">
+                    <div class="text-primary text-8xl font-black tracking-tighter mb-12 opacity-10 group-hover:opacity-100 transition-opacity duration-700 leading-none">03</div>
+                    <h3 class="text-white text-xs font-black mb-6 tracking-[0.3em] uppercase group-hover:text-primary transition-colors">Execute</h3>
+                    <p class="text-white/40 text-sm leading-relaxed font-medium group-hover:text-white/70 transition-colors">Expert application of our rigorous cleaning and restoration protocols.</p>
+                </div>
+                <div class="reveal delay-300 relative z-10 group">
+                    <div class="text-primary text-8xl font-black tracking-tighter mb-12 opacity-10 group-hover:opacity-100 transition-opacity duration-700 leading-none">04</div>
+                    <h3 class="text-white text-xs font-black mb-6 tracking-[0.3em] uppercase group-hover:text-primary transition-colors">Perfect</h3>
+                    <p class="text-white/40 text-sm leading-relaxed font-medium group-hover:text-white/70 transition-colors">Final inspection ensuring every detail meets our uncompromising standard.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results Section -->
+    <section class="bg-white section-padding overflow-hidden">
+        <div class="container-custom">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-24 items-center">
+                <div class="lg:col-span-5 reveal">
+                    <span class="text-primary font-heading font-black tracking-[0.4em] uppercase text-[10px] mb-8 block">The Portfolio</span>
+                    <h2 class="text-[#111111] text-4xl sm:text-5xl md:text-7xl font-black tracking-tighter mb-8 sm:mb-10 leading-[0.9]">
+                        Meticulous <br>
+                        <span class="font-editorial italic font-normal text-[#CCCCCC] tracking-normal">Restoration</span>
+                    </h2>
+                    <p class="text-[#666666] text-lg mb-12 font-medium leading-relaxed max-w-md opacity-80">
+                        Visual evidence of our uncompromising standards. We transform high-end spaces into their most pristine state.
+                    </p>
+                    <div class="flex space-x-16">
+                        <div>
+                            <div class="text-[#111111] text-5xl font-black mb-2 tracking-tighter">500<span class="text-primary">+</span></div>
+                            <div class="text-[#999999] text-[9px] uppercase tracking-[0.3em] font-black">Properties Restored</div>
+                        </div>
+                        <div>
+                            <div class="text-[#111111] text-5xl font-black mb-2 tracking-tighter">100<span class="text-primary">%</span></div>
+                            <div class="text-[#999999] text-[9px] uppercase tracking-[0.3em] font-black">Retention Rate</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-7 grid grid-cols-2 gap-6 reveal delay-200">
+                    <div class="space-y-6">
+                        <div class="relative group overflow-hidden grayscale hover:grayscale-0 transition-all duration-700 shadow-xl">
+                            <img src="public/kitchen-result.jpg" alt="Results" class="w-full h-72 object-cover">
+                        </div>
+                        <div class="relative group overflow-hidden grayscale hover:grayscale-0 transition-all duration-700 shadow-xl">
+                            <img src="public/maintenance-clean.jpg" alt="After" class="w-full h-96 object-cover">
+                        </div>
+                    </div>
+                    <div class="pt-16 space-y-6">
+                       <div class="relative group overflow-hidden grayscale hover:grayscale-0 transition-all duration-700 shadow-xl">
+                            <img src="public/end-of-lease.jpg" alt="After" class="w-full h-96 object-cover">
+                        </div>
+                        <div class="relative group overflow-hidden grayscale hover:grayscale-0 transition-all duration-700 shadow-xl">
+                            <img src="public/deep-clean.jpg" alt="Detail" class="w-full h-72 object-cover">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="bg-[#0A0A0A] section-padding">
+        <div class="container-custom">
+            <div class="flex flex-col items-center text-center mb-24 reveal">
+                <span class="text-primary font-heading font-black tracking-[0.4em] uppercase text-[10px] mb-8 block">Client Voices</span>
+                <h2 class="text-white text-4xl sm:text-5xl md:text-7xl font-black tracking-tighter max-w-4xl">
+                    Trusted by <br>
+                    <span class="font-editorial italic font-normal text-white/40 tracking-normal">Discerning</span> Clients
+                </h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+                <div class="reveal bg-[#111111] p-12 lg:p-16 flex flex-col justify-between border border-white/5 hover:border-primary/50 transition-all duration-700 group">
+                    <div>
+                        <i data-lucide="quote" class="w-12 h-12 text-primary mb-12 opacity-20 group-hover:opacity-100 transition-opacity duration-700"></i>
+                        <p class="text-white/80 text-xl leading-relaxed font-medium font-editorial italic mb-16">
+                            "The level of detail is unmatched. I've used many cleaning services in Brisbane, but Cleaners At Logan is in a league of their own. Our residence has never looked better."
+                        </p>
+                    </div>
+                    <div class="flex flex-col">
+                        <div class="h-px w-16 bg-primary mb-8 group-hover:w-full transition-all duration-1000"></div>
+                        <h4 class="text-white text-xs font-black tracking-[0.2em] uppercase mb-2">Sarah Jenkins</h4>
+                        <p class="text-primary text-[9px] font-black uppercase tracking-[0.3em]">South Brisbane</p>
+                    </div>
+                </div>
+                <div class="reveal delay-100 bg-[#111111] p-12 lg:p-16 flex flex-col justify-between border border-white/5 hover:border-primary/50 transition-all duration-700 group">
+                    <div>
+                        <i data-lucide="quote" class="w-12 h-12 text-primary mb-12 opacity-20 group-hover:opacity-100 transition-opacity duration-700"></i>
+                        <p class="text-white/80 text-xl leading-relaxed font-medium font-editorial italic mb-16">
+                            "Absolute professionalism. They manage our executive office cleaning weekly and the results are impeccable. Highly recommended for commercial environments."
+                        </p>
+                    </div>
+                    <div class="flex flex-col">
+                        <div class="h-px w-16 bg-primary mb-8 group-hover:w-full transition-all duration-1000"></div>
+                        <h4 class="text-white text-xs font-black tracking-[0.2em] uppercase mb-2">Mark Thompson</h4>
+                        <p class="text-primary text-[9px] font-black uppercase tracking-[0.3em]">Logan Central</p>
+                    </div>
+                </div>
+                <div class="reveal delay-200 bg-[#111111] p-12 lg:p-16 flex flex-col justify-between border border-white/5 hover:border-primary/50 transition-all duration-700 group">
+                    <div>
+                        <i data-lucide="quote" class="w-12 h-12 text-primary mb-12 opacity-20 group-hover:opacity-100 transition-opacity duration-700"></i>
+                        <p class="text-white/80 text-xl leading-relaxed font-medium font-editorial italic mb-16">
+                            "Exceptional end-of-lease service. The attention to detail ensured a seamless transition. They are truly the gold standard in Brisbane."
+                        </p>
+                    </div>
+                    <div class="flex flex-col">
+                        <div class="h-px w-16 bg-primary mb-8 group-hover:w-full transition-all duration-1000"></div>
+                        <h4 class="text-white text-xs font-black tracking-[0.2em] uppercase mb-2">Emma Wilson</h4>
+                        <p class="text-primary text-[9px] font-black uppercase tracking-[0.3em]">Springwood</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Areas -->
+    <section class="bg-white py-24 lg:py-32">
+        <div class="container-custom">
+            <div class="reveal bg-[#0A0A0A] p-12 lg:p-24 relative overflow-hidden border border-black/5 shadow-2xl">
+                <div class="absolute inset-0 opacity-[0.02] pointer-events-none">
+                    <svg width="100%" height="100%" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                            <pattern id="grid" width="60" height="60" patternUnits="userSpaceOnUse">
+                                <path d="M 60 0 L 0 0 0 60" fill="none" stroke="white" strokeWidth="1"/>
+                            </pattern>
+                        </defs>
+                        <rect width="100%" height="100%" fill="url(#grid)" />
+                    </svg>
+                </div>
+
+                <div class="relative z-10 grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+                    <div class="lg:col-span-7">
+                        <span class="text-primary font-heading font-black tracking-[0.4em] uppercase text-[10px] mb-8 block">Regional Presence</span>
+                        <h2 class="text-white text-5xl md:text-6xl font-black tracking-tighter mb-10 leading-[0.9]">
+                            Brisbane, Logan <br>
+                            <span class="font-editorial italic font-normal text-white/40 tracking-normal">& Surrounds.</span>
+                        </h2>
+                        <p class="text-white/50 text-lg mb-12 font-medium leading-relaxed max-w-xl">
+                            Our elite cleaning units are strategically positioned to provide prompt and professional service throughout South East Queensland.
+                        </p>
+                        <div class="flex items-center space-x-6">
+                            <div class="w-16 h-16 bg-primary/5 border border-primary/20 flex items-center justify-center rounded-none">
+                                <i data-lucide="map-pin" class="text-primary w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <p class="text-white font-black text-xs tracking-widest uppercase mb-1">Central Hub</p>
+                                <p class="text-white/40 text-[11px] font-bold uppercase tracking-wider">Brisbane Metropolitan Area</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-5 grid grid-cols-2 gap-y-6 gap-x-12">
+                        <div class="flex items-center space-x-4 group">
+                            <div class="w-1 h-1 bg-primary rounded-none group-hover:scale-150 transition-transform duration-500"></div>
+                            <span class="text-white/60 text-[11px] font-black uppercase tracking-widest group-hover:text-white transition-colors">Brisbane CBD</span>
+                        </div>
+                        <div class="flex items-center space-x-4 group">
+                            <div class="w-1 h-1 bg-primary rounded-none group-hover:scale-150 transition-transform duration-500"></div>
+                            <span class="text-white/60 text-[11px] font-black uppercase tracking-widest group-hover:text-white transition-colors">South Brisbane</span>
+                        </div>
+                        <div class="flex items-center space-x-4 group">
+                            <div class="w-1 h-1 bg-primary rounded-none group-hover:scale-150 transition-transform duration-500"></div>
+                            <span class="text-white/60 text-[11px] font-black uppercase tracking-widest group-hover:text-white transition-colors">Logan Central</span>
+                        </div>
+                        <div class="flex items-center space-x-4 group">
+                            <div class="w-1 h-1 bg-primary rounded-none group-hover:scale-150 transition-transform duration-500"></div>
+                            <span class="text-white/60 text-[11px] font-black uppercase tracking-widest group-hover:text-white transition-colors">Springwood</span>
+                        </div>
+                        <div class="flex items-center space-x-4 group">
+                            <div class="w-1 h-1 bg-primary rounded-none group-hover:scale-150 transition-transform duration-500"></div>
+                            <span class="text-white/60 text-[11px] font-black uppercase tracking-widest group-hover:text-white transition-colors">Beenleigh</span>
+                        </div>
+                        <div class="flex items-center space-x-4 group">
+                            <div class="w-1 h-1 bg-primary rounded-none group-hover:scale-150 transition-transform duration-500"></div>
+                            <span class="text-white/60 text-[11px] font-black uppercase tracking-widest group-hover:text-white transition-colors">Sunnybank</span>
+                        </div>
+                        <div class="flex items-center space-x-4 group">
+                            <div class="w-1 h-1 bg-primary rounded-none group-hover:scale-150 transition-transform duration-500"></div>
+                            <span class="text-white/60 text-[11px] font-black uppercase tracking-widest group-hover:text-white transition-colors">Carindale</span>
+                        </div>
+                        <div class="flex items-center space-x-4 group">
+                            <div class="w-1 h-1 bg-primary rounded-none group-hover:scale-150 transition-transform duration-500"></div>
+                            <span class="text-white/60 text-[11px] font-black uppercase tracking-widest group-hover:text-white transition-colors">Mount Gravatt</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact CTA -->
+    <section class="bg-primary py-32 lg:py-48 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-white/10 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2"></div>
+        <div class="absolute bottom-0 left-0 w-[400px] h-[400px] bg-black/10 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/2"></div>
+
+        <div class="container-custom relative z-10">
+            <div class="flex flex-col items-center text-center">
+                <span class="text-white font-heading font-black tracking-[0.5em] uppercase text-[10px] mb-12 block">Initiate Perfection</span>
+                <h2 class="reveal text-white text-5xl sm:text-7xl md:text-8xl lg:text-9xl font-black tracking-tighter mb-10 sm:mb-16 leading-[0.85]">
+                    Elevate Your <br>
+                    <span class="font-editorial italic font-normal text-white/50 tracking-normal">Environment</span>
+                </h2>
+                <p class="reveal delay-100 text-white/90 text-base sm:text-lg md:text-xl max-w-2xl mb-12 sm:mb-20 font-medium leading-relaxed opacity-90">
+                    Secure your complimentary consultation and experience the gold standard of professional cleaning across Brisbane and Logan.
+                </p>
+                
+                <div class="reveal delay-200 flex flex-col sm:flex-row gap-4 sm:gap-8 w-full sm:w-auto">
+                    <button class="bg-[#0A0A0A] text-white px-10 sm:px-16 py-6 sm:py-8 rounded-none text-[10px] font-black tracking-[0.3em] sm:tracking-[0.4em] uppercase transition-all hover:bg-white hover:text-[#111111] flex items-center justify-center group shadow-2xl">
+                        Request Quote
+                        <i data-lucide="arrow-right" class="ml-3 sm:ml-4 w-4 h-4 group-hover:translate-x-2 transition-transform"></i>
+                    </button>
+                    <a href="tel:0487145901" class="glass-cta shine-effect text-white px-10 sm:px-16 py-6 sm:py-8 rounded-none text-[10px] font-black tracking-[0.3em] sm:tracking-[0.4em] uppercase flex items-center justify-center shadow-2xl group">
+                        <i data-lucide="phone" class="mr-3 sm:ml-4 w-4 h-4"></i>
+                        0487 145 901
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#050505] text-white py-32 border-t border-white/5">
+        <div class="container-custom">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-32">
+                <div class="flex flex-col space-y-10">
+                    <div>
+                        <span class="text-white text-xl sm:text-2xl font-black tracking-tighter uppercase leading-none block">Cleaners At Logan</span>
+                        <span class="text-primary text-[8px] sm:text-[9px] tracking-[0.4em] font-black uppercase mt-2 block">Premium Service Brisbane</span>
+                    </div>
+                    <p class="text-white/40 text-sm leading-relaxed max-w-xs font-medium">
+                        Redefining cleaning standards for Brisbane's most prestigious properties through uncompromising dedication to perfection.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-12 h-12 bg-white/5 flex items-center justify-center hover:bg-primary hover:text-white text-white/40 transition-all">
+                            <i data-lucide="globe" class="w-4 h-4"></i>
+                        </a>
+                        <a href="#" class="w-12 h-12 bg-white/5 flex items-center justify-center hover:bg-primary hover:text-white text-white/40 transition-all">
+                            <i data-lucide="share-2" class="w-4 h-4"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-white text-[10px] font-black tracking-[0.4em] uppercase mb-12">Expertise</h4>
+                    <ul class="space-y-6 text-white/40 text-xs font-black tracking-widest uppercase">
+                        <li><a href="#services" class="hover:text-primary transition-colors">Residential</a></li>
+                        <li><a href="#services" class="hover:text-primary transition-colors">Commercial</a></li>
+                        <li><a href="#services" class="hover:text-primary transition-colors">End of Lease</a></li>
+                        <li><a href="#services" class="hover:text-primary transition-colors">Deep Restoration</a></li>
+                        <li><a href="#services" class="hover:text-primary transition-colors">Maintenance</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white text-[10px] font-black tracking-[0.4em] uppercase mb-12">Navigation</h4>
+                    <ul class="space-y-6 text-white/40 text-xs font-black tracking-widest uppercase">
+                        <li><a href="#services" class="hover:text-primary transition-colors">Our Portfolio</a></li>
+                        <li><a href="#why-us" class="hover:text-primary transition-colors">The Standard</a></li>
+                        <li><a href="#process" class="hover:text-primary transition-colors">Signature Process</a></li>
+                        <li><a href="#testimonials" class="hover:text-primary transition-colors">Client Voices</a></li>
+                        <li><a href="#" class="hover:text-primary transition-colors">Request Quote</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-white text-[10px] font-black tracking-[0.4em] uppercase mb-12">Contact</h4>
+                    <ul class="space-y-8 text-white/40 text-xs font-black tracking-widest uppercase">
+                        <li class="flex items-start">
+                            <i data-lucide="phone" class="w-4 h-4 mr-6 text-primary flex-shrink-0"></i>
+                            <a href="tel:0487145901" class="hover:text-white transition-colors">0487 145 901</a>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="mail" class="w-4 h-4 mr-6 text-primary flex-shrink-0"></i>
+                            <a href="mailto:info@cleanersatlogan.com.au" class="hover:text-white transition-colors lowercase">info@cleanersatlogan.com.au</a>
+                        </li>
+                        <li class="flex items-start">
+                            <i data-lucide="map-pin" class="w-4 h-4 mr-6 text-primary flex-shrink-0"></i>
+                            <span class="leading-relaxed">Brisbane Metropolitan <br>Queensland, AU</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-white/20 text-[10px] font-black tracking-widest uppercase">
+                <p>© 2024 Cleaners At Logan. All Rights Reserved.</p>
+                <div class="flex space-x-8 mt-4 md:mt-0">
+                    <a href="#" class="hover:text-white transition-colors">Privacy</a>
+                    <a href="#" class="hover:text-white transition-colors">Terms</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+
+        // Navbar Scroll Effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('bg-[#0A0A0A]/95', 'backdrop-blur-md', 'py-4', 'border-b', 'border-white/5');
+                navbar.classList.remove('py-8');
+            } else {
+                navbar.classList.remove('bg-[#0A0A0A]/95', 'backdrop-blur-md', 'py-4', 'border-b', 'border-white/5');
+                navbar.classList.add('py-8');
+            }
+        });
+
+        // Mobile Menu Toggle
+        const mobileToggle = document.getElementById('mobile-menu-toggle');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.getElementById('menu-icon');
+        
+        mobileToggle.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            const isHidden = mobileMenu.classList.contains('hidden');
+            menuIcon.setAttribute('data-lucide', isHidden ? 'menu' : 'x');
+            lucide.createIcons();
+        });
+
+        // Close menu on link click
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                menuIcon.setAttribute('data-lucide', 'menu');
+                lucide.createIcons();
+            });
+        });
+
+        // Reveal on Scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.reveal').forEach(el => {
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
